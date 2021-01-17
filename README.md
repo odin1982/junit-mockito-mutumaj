@@ -2,7 +2,7 @@
 
 ## Defining unit testing
 ```bash
-Un test es una evaluaci√≥n,una TestClass es la validaci√≥n de un requerimiento funcional o no funcional antes de que sea entregado
+Un test es una evaluacion,una TestClass es la validacion de un requerimiento funcional o no funcional antes de que sea entregado
 al cliente.
 
 Ventajas de JUnit 4:
@@ -57,3 +57,17 @@ Paquete usado por JUnit:
 	Se usa para ignorar el test y se le puede agragar un mensaje para documentar el motivo
 
 
+## Executing test in order
+	JUnit permite executar los test de forma aleatoria
+	To change the execution order, annotate your test class using @FixMethodOrder and
+	specify one of the following available enum MethodSorters constant:
+
+	ï MethodSorters.JVM: 
+		This leaves the test methods in the order returned by the JVM. This order may 		vary from run to run.
+	ï MethodSorters.NAME_ASCENDING: 
+		This sorts the test methods by the method name in the lexicographic order.
+	ï MethodSorters.DEFAULT: 
+		This is the default value that doesn't guarantee the execution order.
+		
+		
+	
