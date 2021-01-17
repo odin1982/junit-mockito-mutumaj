@@ -84,11 +84,22 @@ Paquete usado por JUnit:
 ```
   Assume si la condicion se cumple, se ejecuta el test, si no se cumple lo ignora,
   podria ser un ignore condicionado a cierto estatus o circunstancia
-  si isSonarRunning = false se ejecuta sino no se ignora el test
-  
-  public class Assumption {
-	boolean isSonarRunning = false;
-	
-	* vease clase Assumption 
+  si isSonarRunning = false se ejecuta sino no se ignora el test.
 ```
+> Vease clase Assumption 
+
+
+## TestSuite
+```
+	En esta parte tu estas indicando que test quieres probar usando un testsuite
 	
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+	AssertTest.class,
+	TestExecutionOrder.class,
+	Assumption.class
+})
+public class TestSuite {
+
+}
+```	
