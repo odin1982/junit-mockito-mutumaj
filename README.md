@@ -102,4 +102,7 @@ Paquete usado por JUnit:
 public class TestSuite {
 
 }
-```	
+```
+
+## assertThat
+assertThat is more readable than assertEquals
