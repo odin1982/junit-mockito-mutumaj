@@ -8,8 +8,10 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.hasItems;
+import static org.hamcrest.CoreMatchers.startsWith;
+import static org.hamcrest.CoreMatchers.endsWith;
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -41,5 +43,13 @@ public class AssertThatTest {
 		assertThat(salary,hasItem(50.0));
 		assertThat(salary,hasItems(50.0,200.0));
 		assertThat(salary,not(hasItem(1.00)));
+	}
+	
+	@Test
+	public void verify_Strings() throws Exception{
+		String name = "John Jr Dale";
+		assertThat(name,startsWith("John"));
+		assertThat(name,endsWith("Dale"));
+		assertThat(name,containsString("Jr"));
 	}
 }
