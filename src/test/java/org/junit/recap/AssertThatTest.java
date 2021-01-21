@@ -14,9 +14,8 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
 import java.util.Arrays;
 import java.util.List;
-
 import org.junit.Test;
-
+import static org.junit.building.customer.matcher.LessThanOrEqual.lessThanOrEqual;
 public class AssertThatTest {
 
 	@Test
@@ -51,5 +50,22 @@ public class AssertThatTest {
 		assertThat(name,startsWith("John"));
 		assertThat(name,endsWith("Dale"));
 		assertThat(name,containsString("Jr"));
+	}
+	
+	@Test
+	public void lessthanOrEquals_custom_matcher() throws Exception{
+		int actualGoalScored = 2;
+		assertThat(actualGoalScored,lessThanOrEqual(4));
+		assertThat(actualGoalScored,lessThanOrEqual(2));
+		
+		double originalPI =3.14;
+		assertThat(originalPI,lessThanOrEqual(9.00));
+		
+		String authorName ="Sujoy";
+		assertThat(authorName,lessThanOrEqual("Zachary"));
+		
+		// testing code with a greater value
+		// int maxInt = Integer.MAX_VALUE;
+		// assertThat(maxInt,lessThanOrEqual(Integer.MIN_VALUE));
 	}
 }
