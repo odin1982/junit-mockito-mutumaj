@@ -106,3 +106,11 @@ public class TestSuite {
 
 ## assertThat
 assertThat is more readable than assertEquals
+
+
+## Parameterized test
+Parametirezed test are used for multiple iterations over a single input to stress the object in test. The primary reason is to reduce the amount of test code.
+
+Parameterized is a special type of runner and can be used with the @RunWith annotation.
+
+Parameterized comes with two flavors: constructor or methods
