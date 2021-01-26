@@ -8,20 +8,17 @@ import java.util.Collection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
-public class ParameterizedFactorialTest {
-	private int number;
-	private int expectedResult;
+public class ParameterizeParamFactorialTest {
+	@Parameter(value=0)//posicion del array
+	public int number;
+	@Parameter(value=1)//posicion del array
+	public int expectedResult;
 	
-	public ParameterizedFactorialTest(int input,int expected) {
-		number = input;
-		expectedResult = expected;
-	}
-	
-	//@Parameters //solo muestra los indices 
-	@Parameters(name = "{index}: factorial({0})={1}")//aqui muestra mas detallado la descripcion del test
+	@Parameters
 	public static Collection<Object[]> factorialData(){
 		return Arrays.asList(
 				new Object[][]{	{0,1},
@@ -34,9 +31,12 @@ public class ParameterizedFactorialTest {
 								});
 	}
 	
+	
 	@Test
 	public void factorial() throws Exception{
 		Factorial fact = new Factorial();
 		assertEquals(fact.factorial(number),expectedResult);
 	}
+	
+
 }
