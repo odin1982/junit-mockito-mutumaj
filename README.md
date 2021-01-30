@@ -114,3 +114,20 @@ Parametirezed test are used for multiple iterations over a single input to stres
 Parameterized is a special type of runner and can be used with the @RunWith annotation.
 
 Parameterized comes with two flavors: constructor or methods
+
+
+## Working with timeouts
+JUnit provides a timeout value (in milliseconds) in the @Test annotation to make sure that if a test runs longer than the specified value, the test fails.
+
+```
+@Test(timeout=10)
+public void forEver() throws Exception {
+	Thread.sleep(100000);
+}
+```
+
+
+## Junit theories
+
+Se usan para ingresar combinaciones de datos a tus metodos test,
+sin necesidad de tu ingresar todas esa posibles combinaciones.
